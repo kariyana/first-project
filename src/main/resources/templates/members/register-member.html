@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    member作成フォーム
+    <div>
+        <form action="output-member.html" th:action="@{/members/register}" method="post">
+            <label for="name">名前:</label><input type="text" name="name" id="name"><br>
+            <label for="money">年齢:</label><input type="text" name="age" id="age"><br>
+            <label for="birthDay">誕生日:</label><input type="date" name="birthDay" id="birthDay"><br>
+            <span>性別</span>
+            <label for="men">男性:</label><input type="radio" name="gender" id="men" value="男性">
+            <label for="women">女性:</label><input type="radio" name="gender" id="women" value="女性"><br>
+            <label for="money">所持金:</label><input type="text" name="money" id="money"><br>
+            <label for="comment"></label><textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            <span>趣味は：</span><br>
+            <label for="sports">スポーツ</label><input type="checkbox" name="hobbyList" id="sports" value="スポーツ">
+            <label for="book">読書</label><input type="checkbox" name="hobbyList" id="book" value="読書">
+            <label for="sleep">睡眠</label><input type="checkbox" name="hobbyList" id="sleep" value="睡眠">
+            <button>送信</button>
+        </form>
+    </div>
+</body>
+</html>
