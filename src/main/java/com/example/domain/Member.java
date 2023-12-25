@@ -1,6 +1,8 @@
 package com.example.domain;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 public class Member {
@@ -18,6 +20,8 @@ public class Member {
     private LocalDate birthDay;
     //趣味リスト
     private List<String> hobbyList;
+    //作成日
+    private LocalDateTime createdAt;
     
     public String getName()
     {
@@ -87,5 +91,15 @@ public class Member {
     public void setHobbyList(List<String> hobbyList)
     {
         this.hobbyList = hobbyList;
+    }
+
+    public LocalDateTime getCreatedAt()
+    {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt)
+    {
+        this.createdAt = createdAt;
     }
 }

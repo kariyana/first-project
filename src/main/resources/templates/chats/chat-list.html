@@ -17,6 +17,7 @@
     <hr>
     <div>
         <span th:each="chat : ${application.chatList}">
+            <span th:text="${#temporals.format(chat.createdAt,'YYYY年MM月dd日HH時mm分ss秒')}"></span><br>
             <span th:text="${chat.name}"></span>さんの発言<br>
             <span th:text="${chat.comment}"></span>
             <hr>
