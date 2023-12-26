@@ -8,6 +8,8 @@ import java.util.Map;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -31,7 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MemberController {
     
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model,MemberForm memberForm) {
 
         Map<Integer,String> hobbyMap = new LinkedHashMap<>();
         hobbyMap.put(1,"スポーツ");
@@ -44,8 +46,16 @@ public class MemberController {
     }
 
     @PostMapping("/register")
-    public String registerMember(MemberForm memberForm,
-				RedirectAttributes redirectAttributes) {
+    public String registerMember(
+                @Validated MemberForm memberForm,//request
+                BindingResult result ,//エラーメッセージを格納
+				RedirectAttributes redirectAttributes, //flashスコープを扱うため。
+                Model model
+    ) {
+        //エラーがあった場合は、遷移させない。
+        if(result.hasErrors()){
+            return index(model,memberForm);
+        }
         //メンバーのインスタンス化            
         Member member = new Member();
         //formの内容でプロパティが一致するものをコピーする。
