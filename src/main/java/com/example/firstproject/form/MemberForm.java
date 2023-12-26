@@ -1,12 +1,10 @@
-package com.example.domain;
+package com.example.firstproject.form;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 
-public class Member {
-    //名前
+public class MemberForm {
+        //名前
     private String name;
     //年齢
     private Integer age;
@@ -19,9 +17,7 @@ public class Member {
     //誕生日
     private LocalDate birthDay;
     //趣味リスト
-    private List<String> hobbyList;
-    //作成日
-    private LocalDateTime createdAt;
+    private List<Integer> hobbyList;
 
     public String getName()
     {
@@ -83,23 +79,14 @@ public class Member {
         this.birthDay = birthDay;
     }
 
-    public List<String> getHobbyList()
+    public List<Integer> getHobbyList()
     {
         return hobbyList;
     }
 
-    public void setHobbyList(List<String> hobbyList)
+    public void setHobbyList(List<Integer> hobbyList)
     {
         this.hobbyList = hobbyList;
     }
 
-    public LocalDateTime getCreatedAt()
-    {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt)
-    {
-        this.createdAt = createdAt;
-    }
 }
