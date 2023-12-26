@@ -1,5 +1,7 @@
 package com.example.firstproject.controller;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +51,8 @@ public class ChatController {
         if(chatList == null){
             chatList = new ArrayList<>();
         }
+        LocalDateTime now = LocalDateTime.now();
+        member.setCreatedAt(now);
         //フォームで投稿した内容をチャットリストに追加。
         chatList.add(0,member);
         application.setAttribute("chatList", chatList);
