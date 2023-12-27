@@ -1,5 +1,9 @@
 package com.example.firstproject.controller;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +33,13 @@ public class CalculatorController {
 
     @GetMapping("/")
     public String index(Model model,CalculatorForm calculatorForm) {
+        Map<Integer,String> symbolList = new LinkedHashMap<>();
+        symbolList.put(1,"+");
+        symbolList.put(2,"-");
+        symbolList.put(3,"×");
+        symbolList.put(4,"÷");
+ 
+        model.addAttribute("symbolList", symbolList);
         return "calculators/input";
     }
     
@@ -46,8 +57,23 @@ public class CalculatorController {
         int num1 = calculatorForm.getNum1();
         int num2 = calculatorForm.getNum2();
     
-        Integer calResult = calculatorService.addNumber(num1, num2);
-        System.out.println(calResult);
+     
+        Integer symbol = calculatorForm.getSymbol();
+        Integer calResult = 0 ;
+        switch (symbol) {
+            case 1:
+                calResult = calculatorService.addNumber(num1, num2);
+                break;
+            case 2:
+                calResult = calculatorService.subNumber(num1, num2);
+                break;
+            case 3:
+                calResult = calculatorService.multiNumber(num1, num2);
+                break;
+            case 4:
+                calResult = calculatorService.divNumber(num1, num2);
+                break;
+        }
         redirectAttributes.addFlashAttribute("calResult", calResult);
         redirectAttributes.addFlashAttribute("calculatorForm", calculatorForm);
         // model.addAttribute("calReslut", calResult);
