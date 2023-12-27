@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span th:insert="layouts/header::frag_header">
+        header    
+        </span>
+        <span th:text="${aa}"></span>
+    <h1>計算結果</h1>
+    <span>答えは</span>
+    <span th:text="${calResult}" type="text" name="name" id="name"></span>
+    <span>こんにちは</span>
+</body>
+</html>

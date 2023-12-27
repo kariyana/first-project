@@ -1,15 +1,20 @@
 package com.example.firstproject.form;
 
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
 public class CalculatorForm {
     
-    //一つ目の数字
-    @NotNull(message = "入力は必須です。")//@notBlunkは文字列判断
+    //1つ目の数字
+    @NotNull(message = "左のテキストボックスに数値を入力してください。")//@notBlunkは文字列判断
+    @Max(10000)
     private Integer num1;
-    //二つ目の数字
-    @NotNull(message = "入力は必須です。")
+    //2つ目の数字
+    @NotNull(message = "右のテキストボックスに数値を入力してください。")//@notBlunkは文字列判断
+    @Max(10000)
     private Integer num2;
+
 }

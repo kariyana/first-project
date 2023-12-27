@@ -83,6 +83,7 @@ public class MemberController {
         member.setHobbyList(hobbyList);
         //フラッシュスコープ
         redirectAttributes.addFlashAttribute("member",member);
+
         return "redirect:/members/output";
     
     }

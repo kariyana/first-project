@@ -6,8 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <span th:insert="layouts/header::frag_header">
+        header    
+    </span>
     <h1>投稿内容</h1>
-
+    <span th:text="${aa}"></span>
     <label for="name">名前:</label><span th:text="${member.name}" type="text" name="name" id="name"></span><br>
     <label for="age">年齢:</label><span th:text="${member.age}" type="text" name="age" id="age"></span><br>
     <label for="age">誕生日:</label><span th:text="${member.birthDay}" type="text" name="birthDay" id="birthDay"></span><br>
