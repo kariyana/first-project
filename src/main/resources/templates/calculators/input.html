@@ -15,7 +15,9 @@
             <div th:errors="*{num1}" style="color: red;">エラー</div>
             <div th:errors="*{num2}" style="color: red;">エラー</div>
             <label for="num1">1つ目の数字</label><input type="text" name="num1" id="num1" th:field="*{num1}">
-            <span>+</span>
+            <select name="symbol" id="symbol">
+                <option th:each="symbol : ${symbolList}" th:value="${symbol.key}" th:text="${symbol.value}"></option>
+            </select>
             <label for="num2">2つ目の数字</label><input type="text" name="num2" id="num2" th:field="*{num2}">
             <span>=</span>
             <span th:text="${calResult}" type="text" name="name" id="name"></span><br>
