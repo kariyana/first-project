@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,18 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>index</h1>
-    <h2>ddd</h2>
-    <a href="/indexx">インデックス2</a>
-    <a href="/sample">サンプルへ</a>
-    <a href="/redirect">リダイレクト</a>
-    <a href="/redirect2">リダイレクト2</a>
-    <a href="/hello/sample">helloSample</a>
+    <span th:fragment="frag_header">
     <a href="/receive/">フォームへ</a>
     <a href="/login/">ログインフォームへ</a>
     <a href="/members/">メンバー作成へ</a>
     <a href="/chats/">チャットリストへ</a>
-    <a href="/calculators/">計算へ</a>
-    <img src="img/sakura-logo.png" alt="">
+    <a href="/calculators/">計算画面へ</a>
+    </span>
 </body>
 </html>

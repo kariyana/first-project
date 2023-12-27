@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    member作成フォーム
+    <span th:insert="layouts/header::frag_header">
+    header    
+    </span>
     <div>
         <form action="output-member.html" th:action="@{/members/register}" th:object="${memberForm}" method="post">
             <div th:errors="*{name}" style="color: red;">エラー</div>
